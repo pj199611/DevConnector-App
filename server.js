@@ -6,9 +6,10 @@ const usersRoute = require("./Routes/api/users");
 const AuthRoute = require("./Routes/api/auth");
 const postRoute = require("./Routes/api/post");
 const profileRoute = require("./Routes/api/profile");
-
+const cors=require('cors');
 //Connect to database
 connectDB();
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:true}))
 app.use("/api/users", usersRoute);
